@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergence Mag - Actualités RDC en Direct</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components/navigation.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f307a',
+                        secondary: '#ea4325',
+                        accent: '#f4b217',
+                        'accent-blue': '#37a5d5',
+                        dark: '#1a1a1a',
+                        'dark-blue': '#1f307a',
+                        'light-gray': '#f5f5f5'
+                    },
+                    fontFamily: {
+                        'sans': ['Roboto', 'Arial', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-white text-dark">
+    <!-- Top Bar -->
+    <div class="bg-dark text-white text-xs py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center">
+                    <i data-feather="calendar" class="w-3 h-3 mr-1"></i>
+                    <span id="current-date"></span>
+                </span>
+                <span class="flex items-center">
+                    <i data-feather="thermometer" class="w-3 h-3 mr-1"></i>
+                    Kinshasa 28°C
+                </span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="#" class="hover:text-primary transition-colors">
+                    <i data-feather="facebook" class="w-4 h-4"></i>
+                </a>
+                <a href="#" class="hover:text-primary transition-colors">
+                    <i data-feather="twitter" class="w-4 h-4"></i>
+                </a>
+                <a href="#" class="hover:text-primary transition-colors">
+                    <i data-feather="instagram" class="w-4 h-4"></i>
+                </a>
+                <a href="#" class="hover:text-primary transition-colors">
+                    <i data-feather="youtube" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <!-- Logo and Live Section -->
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="flex items-center">
+                        <img src="img/emer.png" alt="Emergence Mag" class="h-24 md:h-28 lg:h-32">
+                    </a>
+                    <a href="#"
+                        class="hidden md:flex items-center bg-secondary text-white px-4 py-2 rounded-full hover:bg-red-700 transition-colors">
+                        <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
+                        <span class="font-bold text-sm uppercase">Direct</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:flex items-center text-dark hover:text-primary transition-colors">
+                        <i data-feather="search" class="w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden text-dark">
+                        <i data-feather="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex items-center space-x-1 py-3">
+                    <li><a href="index.html"
+                            class="px-4 py-2 text-sm font-semibold text-primary bg-light-gray rounded transition-colors flex items-center">
+                            <i data-feather="home" class="w-4 h-4 mr-1"></i>
+                            Accueil
+                        </a>
+                    </li>
+                    <li><a href="politique.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center">
+                            <i data-feather="briefcase" class="w-4 h-4 mr-1"></i>
+                            Politique
+                        </a>
+                    </li>
+                    <li><a href="economie.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center">
+                            <i data-feather="trending-up" class="w-4 h-4 mr-1"></i>
+                            Économie
+                        </a>
+                    </li>
+                    <li><a href="international.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center">
+                            <i data-feather="globe" class="w-4 h-4 mr-1"></i>
+                            International
+                        </a>
+                    </li>
+                    <li><a href="sport.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center">
+                            <i data-feather="award" class="w-4 h-4 mr-1"></i>
+                            Sport
+                        </a>
+                    </li>
+                    <li><a href="sante.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center">
+                            <i data-feather="heart" class="w-4 h-4 mr-1"></i>
+                            Santé
+                        </a>
+                    </li>
+                    <li><a href="tech.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center">
+                            <i data-feather="cpu" class="w-4 h-4 mr-1"></i>
+                            Tech
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 py-4">
+                <ul class="space-y-2">
+                    <li><a href="index.html"
+                            class="block px-4 py-2 text-sm font-semibold text-primary bg-light-gray rounded flex items-center"><i
+                                data-feather="home" class="w-4 h-4 mr-2"></i>Accueil</a></li>
+                    <li><a href="politique.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="briefcase" class="w-4 h-4 mr-2"></i>Politique</a></li>
+                    <li><a href="economie.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="trending-up" class="w-4 h-4 mr-2"></i>Économie</a></li>
+                    <li><a href="international.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="globe" class="w-4 h-4 mr-2"></i>International</a></li>
+                    <li><a href="sport.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="award" class="w-4 h-4 mr-2"></i>Sport</a></li>
+                    <li><a href="sante.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="heart" class="w-4 h-4 mr-2"></i>Santé</a></li>
+                    <li><a href="tech.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="cpu" class="w-4 h-4 mr-2"></i>Tech</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breaking News Ticker -->
+    <div class="bg-secondary text-white py-2 px-4 overflow-hidden">
+        <div class="container mx-auto flex items-center">
+            <span class="font-bold mr-4 flex-shrink-0">BREAKING:</span>
+            <div class="breaking-news-ticker flex-1 overflow-hidden">
+                <div class="animate-marquee">
+                    <span>Le président Félix Tshisekedi rencontre les chefs d'entreprises locales</span>
+                    <span>Nouveau budget national adopté par l'Assemblée Nationale</span>
+                    <span>L'équipe nationale de football se prépare pour la CAN 2024</span>
+                    <span>Le président Félix Tshisekedi rencontre les chefs d'entreprises locales</span>
+                    <span>Nouveau budget national adopté par l'Assemblée Nationale</span>
+                    <span>L'équipe nationale de football se prépare pour la CAN 2024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Carousel -->
+    <div class="relative h-96 md:h-[500px] w-full overflow-hidden">
+        <div class="carousel-slides flex h-full transition-transform duration-500">
+            <div class="carousel-slide min-w-full h-full relative">
+                <img src="http://static.photos/cityscape/1200x630/1" alt="Kinshasa" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8 text-white">
+                    <span class="bg-primary px-3 py-1 text-sm uppercase">Politique</span>
+                    <h2 class="text-2xl md:text-4xl font-bold mt-2">Réforme constitutionnelle: les nouvelles
+                        propositions</h2>
+                    <p class="mt-2 text-lg hidden md:block">Le gouvernement présente son projet de révision de la
+                        constitution devant l'Assemblée Nationale.</p>
+                    <a href="#" class="inline-block mt-4 text-white hover:underline">Lire l'article →</a>
+                </div>
+            </div>
+            <div class="carousel-slide min-w-full h-full relative">
+                <img src="http://static.photos/industry/1200x630/2" alt="Mines" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8 text-white">
+                    <span class="bg-primary px-3 py-1 text-sm uppercase">Économie</span>
+                    <h2 class="text-2xl md:text-4xl font-bold mt-2">Nouveau contrat minier signé dans le Katanga</h2>
+                    <p class="mt-2 text-lg hidden md:block">Le gouvernement et les entreprises minières trouvent un
+                        accord sur les royalties.</p>
+                    <a href="#" class="inline-block mt-4 text-white hover:underline">Lire l'article →</a>
+                </div>
+            </div>
+            <div class="carousel-slide min-w-full h-full relative">
+                <img src="http://static.photos/sport/1200x630/3" alt="Sport" class="w-full h-full object-cover">
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-8 text-white">
+                    <span class="bg-primary px-3 py-1 text-sm uppercase">Sport</span>
+                    <h2 class="text-2xl md:text-4xl font-bold mt-2">Les Léopards remportent le match amical contre le
+                        Sénégal</h2>
+                    <p class="mt-2 text-lg hidden md:block">Victoire 2-1 pour la RDC dans le dernier match de
+                        préparation pour la CAN.</p>
+                    <a href="#" class="inline-block mt-4 text-white hover:underline">Lire l'article →</a>
+                </div>
+            </div>
+        </div>
+        <button
+            class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70">
+            <i data-feather="chevron-left"></i>
+        </button>
+        <button
+            class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70">
+            <i data-feather="chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Latest News Section -->
+    <section class="container mx-auto py-12 px-4">
+        <h2 class="text-3xl font-bold mb-8 border-b-2 border-primary pb-2 inline-block">Dernières Nouvelles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <img src="http://static.photos/politics/640x360/1" alt="Politique" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="text-secondary text-sm font-semibold">Politique</span>
+                    <h3 class="text-xl font-bold mt-2">Réunion cruciale entre l'opposition et la majorité présidentielle
+                    </h3>
+                    <p class="text-gray-600 mt-2">Les leaders politiques se rencontrent pour discuter des réformes
+                        électorales.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-sm text-gray-500">Il y a 2 heures</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Lire plus</a>
+                    </div>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <img src="http://static.photos/technology/640x360/2" alt="Économie" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="text-secondary text-sm font-semibold">Économie</span>
+                    <h3 class="text-xl font-bold mt-2">La BCC annonce de nouvelles mesures pour stabiliser le franc
+                        congolais</h3>
+                    <p class="text-gray-600 mt-2">La banque centrale prend des mesures pour contrer l'inflation.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-sm text-gray-500">Il y a 5 heures</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Lire plus</a>
+                    </div>
+                </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                <img src="http://static.photos/education/640x360/3" alt="Société" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="text-secondary text-sm font-semibold">Société</span>
+                    <h3 class="text-xl font-bold mt-2">Nouveau programme d'alphabétisation dans les zones rurales</h3>
+                    <p class="text-gray-600 mt-2">Le gouvernement lance une initiative pour réduire l'analphabétisme de
+                        30% d'ici 2025.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-sm text-gray-500">Hier</span>
+                        <a href="#" class="text-primary font-semibold hover:underline">Lire plus</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="text-center mt-8">
+            <a href="#"
+                class="inline-block bg-primary text-white px-6 py-3 rounded hover:bg-blue-800 transition-colors">Voir
+                plus d'articles</a>
+        </div>
+    </section>
+
+    <!-- RDC Today Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 border-b-2 border-primary pb-2 inline-block">RDC Aujourd'hui</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="http://static.photos/politics/1024x576/4" alt="Politique RDC"
+                        class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-secondary text-sm font-semibold">Analyse</span>
+                        <h3 class="text-2xl font-bold mt-2">Les défis du nouveau gouvernement face aux attentes de la
+                            population</h3>
+                        <p class="text-gray-600 mt-2">Notre analyse des principaux défis économiques et sociaux auxquels
+                            fait face l'équipe gouvernementale récemment nommée.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-sm text-gray-500">Aujourd'hui</span>
+                            <a href="#" class="text-primary font-semibold hover:underline">Lire l'analyse</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
+                        <span class="text-secondary text-xs font-semibold">Économie</span>
+                        <h4 class="font-bold mt-1">Croissance économique à 6.2% pour le premier trimestre</h4>
+                        <p class="text-sm text-gray-600 mt-1">Les secteurs minier et agricole en tête de la croissance.
+                        </p>
+                        <span class="text-xs text-gray-500 block mt-2">Il y a 3 heures</span>
+                    </article>
+                    <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
+                        <span class="text-secondary text-xs font-semibold">Santé</span>
+                        <h4 class="font-bold mt-1">Nouveau centre de traitement du paludisme inauguré à Mbuji-Mayi</h4>
+                        <p class="text-sm text-gray-600 mt-1">Capacité d'accueil de 200 patients par jour.</p>
+                        <span class="text-xs text-gray-500 block mt-2">Hier</span>
+                    </article>
+                    <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
+                        <span class="text-secondary text-xs font-semibold">Environnement</span>
+                        <h4 class="font-bold mt-1">Lutte contre la déforestation: nouvelles mesures annoncées</h4>
+                        <p class="text-sm text-gray-600 mt-1">Renforcement des contrôles dans les zones protégées.</p>
+                        <span class="text-xs text-gray-500 block mt-2">Il y a 1 jour</span>
+                    </article>
+                    <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
+                        <span class="text-secondary text-xs font-semibold">International</span>
+                        <h4 class="font-bold mt-1">La RDC renforce ses relations diplomatiques avec l'Angola</h4>
+                        <p class="text-sm text-gray-600 mt-1">Accords signés dans les domaines de l'énergie et des
+                            transports.</p>
+                        <span class="text-xs text-gray-500 block mt-2">Il y a 2 jours</span>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture & Society Section -->
+    <section class="container mx-auto py-12 px-4">
+        <h2 class="text-3xl font-bold mb-8 border-b-2 border-primary pb-2 inline-block">Culture & Société</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow mb-6">
+                    <img src="http://static.photos/culture/1024x576/5" alt="Culture" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-secondary text-sm font-semibold">Culture</span>
+                        <h3 class="text-2xl font-bold mt-2">Fally Ipupa annonce une nouvelle tournée mondiale</h3>
+                        <p class="text-gray-600 mt-2">L'artiste congolais présentera son nouvel album dans 12 pays à
+                            travers le monde.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-sm text-gray-500">Aujourd'hui</span>
+                            <a href="culture.html" class="text-primary font-semibold hover:underline">Lire plus</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
+                    <img src="http://static.photos/food/320x240/6" alt="Cuisine"
+                        class="w-full h-32 object-cover rounded-t-lg">
+                    <div class="p-2">
+                        <span class="text-secondary text-xs font-semibold">Cuisine</span>
+                        <h4 class="font-bold mt-1 text-sm">Les secrets du moambe, plat national de la RDC</h4>
+                        <span class="text-xs text-gray-500 block mt-2">Il y a 2 jours</span>
+                    </div>
+                </article>
+                <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
+                    <img src="http://static.photos/art/320x240/7" alt="Art"
+                        class="w-full h-32 object-cover rounded-t-lg">
+                    <div class="p-2">
+                        <span class="text-secondary text-xs font-semibold">Art</span>
+                        <h4 class="font-bold mt-1 text-sm">Exposition des jeunes artistes congolais à Kinshasa</h4>
+                        <span class="text-xs text-gray-500 block mt-2">Il y a 3 jours</span>
+                    </div>
+                </article>
+                <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
+                    <img src="http://static.photos/fashion/320x240/8" alt="Mode"
+                        class="w-full h-32 object-cover rounded-t-lg">
+                    <div class="p-2">
+                        <span class="text-secondary text-xs font-semibold">Mode</span>
+                        <h4 class="font-bold mt-1 text-sm">La mode congolaise s'expose à Paris Fashion Week</h4>
+                        <span class="text-xs text-gray-500 block mt-2">Il y a 4 jours</span>
+                    </div>
+                </article>
+                <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
+                    <img src="http://static.photos/tradition/320x240/9" alt="Tradition"
+                        class="w-full h-32 object-cover rounded-t-lg">
+                    <div class="p-2">
+                        <span class="text-secondary text-xs font-semibold">Tradition</span>
+                        <h4 class="font-bold mt-1 text-sm">Célébration du festival Luba dans le Kasaï</h4>
+                        <span class="text-xs text-gray-500 block mt-2">Il y a 5 jours</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-8 border-b-2 border-primary pb-2 inline-block">Vidéos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative pb-[56.25%]">
+                        <img src="http://static.photos/video/640x360/10" alt="Vidéo"
+                            class="absolute w-full h-full object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-primary bg-opacity-80 rounded-full p-4">
+                                <i data-feather="play" class="text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold">Reportage: La vie dans les quartiers populaires de Kinshasa</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm text-gray-500">5 min</span>
+                            <span class="text-sm text-gray-500">Il y a 1 jour</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative pb-[56.25%]">
+                        <img src="http://static.photos/video/640x360/11" alt="Vidéo"
+                            class="absolute w-full h-full object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-primary bg-opacity-80 rounded-full p-4">
+                                <i data-feather="play" class="text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold">Interview exclusive avec le ministre des Finances</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm text-gray-500">12 min</span>
+                            <span class="text-sm text-gray-500">Il y a 2 jours</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative pb-[56.25%]">
+                        <img src="http://static.photos/video/640x360/12" alt="Vidéo"
+                            class="absolute w-full h-full object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="bg-primary bg-opacity-80 rounded-full p-4">
+                                <i data-feather="play" class="text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold">Documentaire: Les gorilles des montagnes du Virunga</h3>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-sm text-gray-500">22 min</span>
+                            <span class="text-sm text-gray-500">Il y a 3 jours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="videos.html"
+                    class="inline-block bg-primary text-white px-6 py-3 rounded hover:bg-blue-800 transition-colors">Voir
+                    plus de vidéos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white text-dark">
+        <!-- Main Footer Content -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- About Section -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="img/emer.png" alt="Emergence Mag" class="h-24 md:h-24 lg:h-28">
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Votre source d'information en continu sur l'actualité de la République Démocratique du Congo et
+                        du monde.
+                    </p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
+                            <i data-feather="facebook" class="w-4 h-4 text-dark"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
+                            <i data-feather="twitter" class="w-4 h-4 text-dark"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
+                            <i data-feather="instagram" class="w-4 h-4 text-dark"></i>
+                        </a>
+                        <a href="#" class="bg-gray-100 hover:bg-gray-200 p-2 rounded-full transition-colors">
+                            <i data-feather="youtube" class="w-4 h-4 text-dark"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-300 pb-2">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
+                                Accueil
+                            </a></li>
+                        <li><a href="politique.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
+                                Politique
+                            </a></li>
+                        <li><a href="economie.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
+                                Économie
+                            </a></li>
+                        <li><a href="sport.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
+                                Sport
+                            </a></li>
+                        <li><a href="culture.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
+                                Culture
+                            </a></li>
+                        <li><a href="videos.html"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
+                                Vidéos
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-300 pb-2">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#direct"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="tv" class="w-4 h-4 mr-2"></i>
+                                Direct TV
+                            </a></li>
+                        <li><a href="#podcasts"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="mic" class="w-4 h-4 mr-2"></i>
+                                Podcasts
+                            </a></li>
+                        <li><a href="#newsletter"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="mail" class="w-4 h-4 mr-2"></i>
+                                Newsletter
+                            </a></li>
+                        <li><a href="#app" class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="smartphone" class="w-4 h-4 mr-2"></i>
+                                Application Mobile
+                            </a></li>
+                        <li><a href="#alertes"
+                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
+                                <i data-feather="bell" class="w-4 h-4 mr-2"></i>
+                                Alertes Info
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b border-gray-300 pb-2">Newsletter</h4>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Recevez les dernières actualités directement dans votre boîte mail.
+                    </p>
+                    <form class="space-y-2">
+                        <input type="email" placeholder="Votre email"
+                            class="w-full px-4 py-2 rounded bg-gray-100 border border-gray-300 text-dark placeholder-gray-500 focus:outline-none focus:border-primary text-sm">
+                        <button type="submit"
+                            class="w-full bg-primary hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded transition-colors text-sm">
+                            S'abonner
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer -->
+        <div class="border-t border-gray-300">
+            <div class="container mx-auto px-4 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+                    <div class="mb-4 md:mb-0">
+                        <p>&copy; 2024 Emergence Mag. Tous droits réservés.</p>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#" class="hover:text-primary transition-colors">Mentions légales</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="#" class="hover:text-primary transition-colors">Politique de confidentialité</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="#" class="hover:text-primary transition-colors">Conditions d'utilisation</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="#" class="hover:text-primary transition-colors">Contact</a>
+                        <span class="text-gray-400">|</span>
+                        <a href="#" class="hover:text-primary transition-colors">À propos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+        class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all">
+        <i data-feather="arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="components/navigation.js"></script>
+    <script src="components/breaking-news.js"></script>
+    <script src="components/carousel.js"></script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Update current date
+        const dateElement = document.getElementById('current-date');
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const currentDate = new Date().toLocaleDateString('fr-FR', options);
+        dateElement.textContent = currentDate.charAt(0).toUpperCase() + currentDate.slice(1);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

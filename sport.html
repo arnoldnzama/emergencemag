@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport - Emergence Mag</title>
+    <link rel="stylesheet" href="components/navigation.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f307a',
+                        secondary: '#ea4325',
+                        accent: '#f4b217',
+                        'accent-blue': '#37a5d5',
+                        dark: '#1a1a1a',
+                        'light-gray': '#f5f5f5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans bg-white text-dark">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="flex items-center">
+                        <img src="img/emer.png" alt="Emergence Mag" class="h-24 md:h-28 lg:h-32">
+                    </a>
+                    <a href="#" class="hidden md:flex items-center bg-secondary text-white px-4 py-2 rounded-full hover:bg-red-700 transition-colors">
+                        <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
+                        <span class="font-bold text-sm uppercase">Direct</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:flex items-center text-dark hover:text-primary transition-colors">
+                        <i data-feather="search" class="w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden text-dark">
+                        <i data-feather="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex items-center space-x-1 py-3">
+                    <li><a href="index.html" class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i data-feather="home" class="w-4 h-4 mr-1"></i>Accueil</a></li>
+                    <li><a href="politique.html" class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i data-feather="briefcase" class="w-4 h-4 mr-1"></i>Politique</a></li>
+                    <li><a href="economie.html" class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i data-feather="trending-up" class="w-4 h-4 mr-1"></i>Économie</a></li>
+                    <li><a href="international.html" class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i data-feather="globe" class="w-4 h-4 mr-1"></i>International</a></li>
+                    <li><a href="sport.html" class="px-4 py-2 text-sm font-semibold text-primary bg-light-gray rounded transition-colors flex items-center"><i data-feather="award" class="w-4 h-4 mr-1"></i>Sport</a></li>
+                    <li><a href="sante.html" class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i data-feather="heart" class="w-4 h-4 mr-1"></i>Santé</a></li>
+                    <li><a href="tech.html" class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i data-feather="cpu" class="w-4 h-4 mr-1"></i>Tech</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 py-4">
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i data-feather="home" class="w-4 h-4 mr-2"></i>Accueil</a></li>
+                    <li><a href="politique.html" class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i data-feather="briefcase" class="w-4 h-4 mr-2"></i>Politique</a></li>
+                    <li><a href="economie.html" class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i data-feather="trending-up" class="w-4 h-4 mr-2"></i>Économie</a></li>
+                    <li><a href="international.html" class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i data-feather="globe" class="w-4 h-4 mr-2"></i>International</a></li>
+                    <li><a href="sport.html" class="block px-4 py-2 text-sm font-semibold text-primary bg-light-gray rounded flex items-center"><i data-feather="award" class="w-4 h-4 mr-2"></i>Sport</a></li>
+                    <li><a href="sante.html" class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i data-feather="heart" class="w-4 h-4 mr-2"></i>Santé</a></li>
+                    <li><a href="tech.html" class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i data-feather="cpu" class="w-4 h-4 mr-2"></i>Tech</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bg-secondary text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center space-x-3">
+                <i data-feather="award" class="w-8 h-8"></i>
+                <h1 class="text-4xl font-bold">Sport</h1>
+            </div>
+            <p class="mt-2 text-lg">Toute l'actualité sportive congolaise et internationale</p>
+        </div>
+    </div>
+
+    <section class="container mx-auto py-12 px-4">
+        <h2 class="text-2xl font-bold mb-6">Actualités Sportives</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="http://static.photos/sport/640x360/1" alt="Sport" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <span class="text-secondary text-xs font-semibold">Football</span>
+                    <h3 class="text-lg font-bold mt-2">Les Léopards préparent la CAN 2025</h3>
+                    <p class="text-gray-600 mt-2 text-sm">L'équipe nationale entame son stage de préparation.</p>
+                    <span class="text-xs text-gray-500 block mt-3">Il y a 2 heures</span>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="http://static.photos/sport/640x360/2" alt="Sport" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <span class="text-secondary text-xs font-semibold">Basketball</span>
+                    <h3 class="text-lg font-bold mt-2">Victoire du TP Mazembe en Afrobasket</h3>
+                    <p class="text-gray-600 mt-2 text-sm">Le club congolais remporte son match de qualification.</p>
+                    <span class="text-xs text-gray-500 block mt-3">Il y a 4 heures</span>
+                </div>
+            </article>
+
+            <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="http://static.photos/sport/640x360/3" alt="Sport" class="w-full h-48 object-cover">
+                <div class="p-4">
+                    <span class="text-secondary text-xs font-semibold">Athlétisme</span>
+                    <h3 class="text-lg font-bold mt-2">Record national battu au 100m</h3>
+                    <p class="text-gray-600 mt-2 text-sm">Un jeune athlète congolais établit un nouveau record.</p>
+                    <span class="text-xs text-gray-500 block mt-3">Hier</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer class="bg-white text-dark border-t border-gray-200">
+        <div class="container mx-auto px-4 py-8">
+            <p class="text-center text-sm text-gray-600">&copy; 2024 Emergence Mag. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="components/navigation.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>

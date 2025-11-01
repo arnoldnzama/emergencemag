@@ -1,0 +1,80 @@
+/* Breaking News Ticker Animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.breaking-news-ticker {
+    flex: 1;
+    position: relative;
+}
+
+.animate-marquee {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+}
+
+.animate-marquee span {
+    display: inline-block;
+    padding-right: 2rem;
+}
+
+/* Pause animation on hover */
+.breaking-news-ticker:hover .animate-marquee {
+    animation-play-state: paused;
+}
+
+/* Carousel Styles */
+.carousel-slides {
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex-shrink: 0;
+}
+
+.carousel-prev,
+.carousel-next {
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-prev:active,
+.carousel-next:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-indicators button {
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators button:hover {
+    transform: scale(1.2);
+}
+
+/* Animation d'entrée pour les slides */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.carousel-slide img {
+    animation: slideIn 0.5s ease-out;
+}

@@ -1,0 +1,33 @@
+/* Styles pour le menu de navigation mobile */
+#mobile-menu {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation du bouton hamburger */
+#mobile-menu-btn {
+    transition: transform 0.2s ease;
+}
+
+#mobile-menu-btn:active {
+    transform: scale(0.95);
+}
+
+/* Amélioration des liens du menu mobile */
+#mobile-menu a {
+    transition: all 0.2s ease;
+}
+
+#mobile-menu a:hover {
+    transform: translateX(4px);
+}
