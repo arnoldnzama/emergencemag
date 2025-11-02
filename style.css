@@ -99,6 +99,10 @@
         justify-content: center;
     }
     
+    .carousel-indicators {
+        bottom: 0.5rem !important;
+    }
+    
     .carousel-indicators button {
         width: 0.5rem;
         height: 0.5rem;
@@ -110,5 +114,17 @@
     
     #main-carousel {
         -webkit-overflow-scrolling: touch;
+        height: 24rem; /* 384px - hauteur fixe pour mobile */
+    }
+    
+    .carousel-slide h2 {
+        font-size: 1rem !important;
+        line-height: 1.3 !important;
+        margin-top: 0.25rem !important;
+    }
+    
+    .carousel-slide .bg-gradient-to-t {
+        padding: 0.75rem !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.7) 50%, transparent) !important;
     }
 }
