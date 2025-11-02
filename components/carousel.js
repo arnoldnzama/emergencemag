@@ -1,177 +1,169 @@
-// Carousel/Slider avec navigation et auto-play
-class Carousel {
-    constructor(selector) {
-        this.carousel = document.querySelector(selector);
-        if (!this.carousel) return;
+// Carousel/Slider simple et fonctionnel
+(function() {
+    'use strict';
+    
+    function initCarousel() {
+        const carousel = document.querySelector('#main-carousel');
+        if (!carousel) {
+            console.log('Carousel non trouvé');
+            return;
+        }
 
-        this.slides = this.carousel.querySelector('.carousel-slides');
-        this.slideItems = this.carousel.querySelectorAll('.carousel-slide');
-        this.prevBtn = this.carousel.querySelector('.carousel-prev');
-        this.nextBtn = this.carousel.querySelector('.carousel-next');
+        const slides = carousel.querySelector('.carousel-slides');
+        const slideItems = carousel.querySelectorAll('.carousel-slide');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
         
-        this.currentIndex = 0;
-        this.totalSlides = this.slideItems.length;
-        this.autoPlayInterval = null;
-        this.autoPlayDelay = 5000; // 5 secondes
+        let currentIndex = 0;
+        const totalSlides = slideItems.length;
+        let autoPlayInterval = null;
+        const autoPlayDelay = 5000;
 
-        this.init();
-    }
+        console.log('Carousel initialisé avec', totalSlides, 'slides');
 
-    init() {
-        if (this.totalSlides === 0) return;
+        if (totalSlides === 0) return;
 
-        // Navigation avec les boutons
-        this.prevBtn?.addEventListener('click', () => this.prev());
-        this.nextBtn?.addEventListener('click', () => this.next());
+        // Fonction pour aller à une slide
+        function goToSlide(index) {
+            currentIndex = index;
+            const offset = -index * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+            updateIndicators();
+        }
+
+        // Slide suivante
+        function next() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            goToSlide(currentIndex);
+        }
+
+        // Slide précédente
+        function prev() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            goToSlide(currentIndex);
+        }
+
+        // Auto-play
+        function startAutoPlay() {
+            stopAutoPlay();
+            autoPlayInterval = setInterval(next, autoPlayDelay);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+        }
+
+        // Boutons de navigation
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                prev();
+                stopAutoPlay();
+                startAutoPlay();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                next();
+                stopAutoPlay();
+                startAutoPlay();
+            });
+        }
 
         // Navigation au clavier
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') this.prev();
-            if (e.key === 'ArrowRight') this.next();
+            if (e.key === 'ArrowLeft') {
+                prev();
+                stopAutoPlay();
+                startAutoPlay();
+            }
+            if (e.key === 'ArrowRight') {
+                next();
+                stopAutoPlay();
+                startAutoPlay();
+            }
         });
 
-        // Pause auto-play au survol
-        this.carousel.addEventListener('mouseenter', () => this.stopAutoPlay());
-        this.carousel.addEventListener('mouseleave', () => this.startAutoPlay());
+        // Pause au survol
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
 
-        // Support tactile pour mobile
-        this.addTouchSupport();
+        // Support tactile
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-        // Ajouter des indicateurs
-        this.addIndicators();
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            stopAutoPlay();
+        }, { passive: true });
 
-        // Démarrer l'auto-play
-        this.startAutoPlay();
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    next();
+                } else {
+                    prev();
+                }
+            }
+            startAutoPlay();
+        }, { passive: true });
 
-        // Afficher la première slide
-        this.goToSlide(0);
-    }
-
-    goToSlide(index) {
-        this.currentIndex = index;
-        const offset = -index * 100;
-        this.slides.style.transform = `translateX(${offset}%)`;
-
-        // Mettre à jour les indicateurs
-        this.updateIndicators();
-    }
-
-    next() {
-        this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
-        this.goToSlide(this.currentIndex);
-    }
-
-    prev() {
-        this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
-        this.goToSlide(this.currentIndex);
-    }
-
-    startAutoPlay() {
-        this.stopAutoPlay();
-        this.autoPlayInterval = setInterval(() => this.next(), this.autoPlayDelay);
-    }
-
-    stopAutoPlay() {
-        if (this.autoPlayInterval) {
-            clearInterval(this.autoPlayInterval);
-            this.autoPlayInterval = null;
-        }
-    }
-
-    addIndicators() {
+        // Créer les indicateurs
         const indicatorsContainer = document.createElement('div');
         indicatorsContainer.className = 'carousel-indicators absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10';
+        indicatorsContainer.style.cssText = 'pointer-events: auto;';
 
-        for (let i = 0; i < this.totalSlides; i++) {
+        for (let i = 0; i < totalSlides; i++) {
             const indicator = document.createElement('button');
-            indicator.className = 'w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all';
-            indicator.setAttribute('aria-label', `Aller à la slide ${i + 1}`);
-            indicator.addEventListener('click', () => {
-                this.goToSlide(i);
-                this.stopAutoPlay();
-                this.startAutoPlay();
+            indicator.className = 'carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all';
+            indicator.setAttribute('aria-label', `Slide ${i + 1}`);
+            indicator.setAttribute('data-index', i);
+            
+            indicator.addEventListener('click', (e) => {
+                e.preventDefault();
+                goToSlide(i);
+                stopAutoPlay();
+                startAutoPlay();
             });
+            
             indicatorsContainer.appendChild(indicator);
         }
 
-        this.carousel.appendChild(indicatorsContainer);
-        this.indicators = indicatorsContainer.querySelectorAll('button');
-    }
+        carousel.appendChild(indicatorsContainer);
+        const indicators = indicatorsContainer.querySelectorAll('.carousel-indicator');
 
-    updateIndicators() {
-        if (!this.indicators) return;
-        
-        this.indicators.forEach((indicator, index) => {
-            if (index === this.currentIndex) {
-                indicator.classList.remove('bg-opacity-50');
-                indicator.classList.add('bg-opacity-100', 'w-8');
-            } else {
-                indicator.classList.remove('bg-opacity-100', 'w-8');
-                indicator.classList.add('bg-opacity-50');
-            }
-        });
-    }
-
-    addTouchSupport() {
-        let touchStartX = 0;
-        let touchEndX = 0;
-        let touchStartY = 0;
-        let touchEndY = 0;
-        let isSwiping = false;
-
-        this.carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-            touchStartY = e.changedTouches[0].screenY;
-            isSwiping = true;
-        }, { passive: true });
-
-        this.carousel.addEventListener('touchmove', (e) => {
-            if (!isSwiping) return;
-            
-            touchEndX = e.changedTouches[0].screenX;
-            touchEndY = e.changedTouches[0].screenY;
-            
-            // Calculer la différence
-            const diffX = Math.abs(touchStartX - touchEndX);
-            const diffY = Math.abs(touchStartY - touchEndY);
-            
-            // Si le swipe est plus horizontal que vertical, empêcher le scroll
-            if (diffX > diffY && diffX > 10) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        this.carousel.addEventListener('touchend', (e) => {
-            if (!isSwiping) return;
-            
-            touchEndX = e.changedTouches[0].screenX;
-            touchEndY = e.changedTouches[0].screenY;
-            this.handleSwipe();
-            isSwiping = false;
-        }, { passive: true });
-
-        const handleSwipe = () => {
-            const swipeThreshold = 50;
-            const diffX = touchStartX - touchEndX;
-            const diffY = Math.abs(touchStartY - touchEndY);
-
-            // Ne déclencher le swipe que si le mouvement est principalement horizontal
-            if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
-                if (diffX > 0) {
-                    this.next();
+        // Mettre à jour les indicateurs
+        function updateIndicators() {
+            indicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.remove('bg-opacity-50', 'w-3');
+                    indicator.classList.add('bg-opacity-100', 'w-8');
                 } else {
-                    this.prev();
+                    indicator.classList.remove('bg-opacity-100', 'w-8');
+                    indicator.classList.add('bg-opacity-50', 'w-3');
                 }
-                this.stopAutoPlay();
-                this.startAutoPlay();
-            }
-        };
+            });
+        }
 
-        this.handleSwipe = handleSwipe;
+        // Initialiser
+        goToSlide(0);
+        startAutoPlay();
+        
+        console.log('Carousel démarré avec succès');
     }
-}
 
-// Initialiser le carousel au chargement de la page
-document.addEventListener('DOMContentLoaded', () => {
-    new Carousel('#main-carousel');
-});
+    // Attendre que le DOM soit chargé
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    } else {
+        initCarousel();
+    }
+})();
