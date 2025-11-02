@@ -115,22 +115,49 @@ class Carousel {
     addTouchSupport() {
         let touchStartX = 0;
         let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
+        let isSwiping = false;
 
         this.carousel.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+            isSwiping = true;
         }, { passive: true });
 
-        this.carousel.addEventListener('touchend', (e) => {
+        this.carousel.addEventListener('touchmove', (e) => {
+            if (!isSwiping) return;
+            
             touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            
+            // Calculer la différence
+            const diffX = Math.abs(touchStartX - touchEndX);
+            const diffY = Math.abs(touchStartY - touchEndY);
+            
+            // Si le swipe est plus horizontal que vertical, empêcher le scroll
+            if (diffX > diffY && diffX > 10) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        this.carousel.addEventListener('touchend', (e) => {
+            if (!isSwiping) return;
+            
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
             this.handleSwipe();
+            isSwiping = false;
         }, { passive: true });
 
         const handleSwipe = () => {
             const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
+            const diffX = touchStartX - touchEndX;
+            const diffY = Math.abs(touchStartY - touchEndY);
 
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
+            // Ne déclencher le swipe que si le mouvement est principalement horizontal
+            if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
+                if (diffX > 0) {
                     this.next();
                 } else {
                     this.prev();
@@ -146,5 +173,5 @@ class Carousel {
 
 // Initialiser le carousel au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
-    new Carousel('.relative.h-96');
+    new Carousel('#main-carousel');
 });
