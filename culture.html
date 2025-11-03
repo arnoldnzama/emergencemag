@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture - Emergence Mag</title>
+    <link rel="icon" type="image/x-icon" href="img/ico/emer.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components/navigation.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f307a',
+                        secondary: '#ea4325',
+                        accent: '#f4b217',
+                        'accent-blue': '#37a5d5',
+                        dark: '#1a1a1a',
+                        'dark-blue': '#1f307a',
+                        'light-gray': '#f5f5f5'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-sans bg-white text-dark">
+    <div class="bg-dark text-white text-xs py-2">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center"><i data-feather="calendar" class="w-3 h-3 mr-1"></i><span
+                        id="current-date"></span></span>
+                <span class="flex items-center"><i data-feather="thermometer" class="w-3 h-3 mr-1"></i>Kinshasa
+                    28°C</span>
+            </div>
+            <div class="flex items-center space-x-3">
+                <a href="#" class="hover:text-primary transition-colors"><i data-feather="facebook"
+                        class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-primary transition-colors"><i data-feather="twitter"
+                        class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4 border-b border-gray-200">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="flex items-center">
+                        <img src="img/emer.png" alt="Emergence Mag" class="h-24 md:h-28 lg:h-32">
+                    </a>
+                    <a href="#"
+                        class="hidden md:flex items-center bg-secondary text-white px-4 py-2 rounded-full hover:bg-red-700 transition-colors">
+                        <span class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
+                        <span class="font-bold text-sm uppercase">Direct</span>
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hidden md:flex items-center text-dark hover:text-primary transition-colors">
+                        <i data-feather="search" class="w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="md:hidden text-dark">
+                        <i data-feather="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex items-center space-x-1 py-3">
+                    <li><a href="index.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="home" class="w-4 h-4 mr-1"></i>Accueil</a></li>
+                    <li><a href="politique.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="briefcase" class="w-4 h-4 mr-1"></i>Politique</a></li>
+                    <li><a href="economie.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="trending-up" class="w-4 h-4 mr-1"></i>Économie</a></li>
+                    <li><a href="international.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="globe" class="w-4 h-4 mr-1"></i>International</a></li>
+                    <li><a href="sport.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="award" class="w-4 h-4 mr-1"></i>Sport</a></li>
+                    <li><a href="sante.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="heart" class="w-4 h-4 mr-1"></i>Santé</a></li>
+                    <li><a href="tech.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="cpu" class="w-4 h-4 mr-1"></i>Tech</a></li>
+                    <li><a href="societe.html"
+                            class="px-4 py-2 text-sm font-semibold text-dark hover:text-primary hover:bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="users" class="w-4 h-4 mr-1"></i>Société</a></li>
+                    <li><a href="culture.html"
+                            class="px-4 py-2 text-sm font-semibold text-primary bg-light-gray rounded transition-colors flex items-center"><i
+                                data-feather="music" class="w-4 h-4 mr-1"></i>Culture</a></li>
+                </ul>
+            </nav>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 py-4">
+                <ul class="space-y-2">
+                    <li><a href="index.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="home" class="w-4 h-4 mr-2"></i>Accueil</a></li>
+                    <li><a href="politique.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="briefcase" class="w-4 h-4 mr-2"></i>Politique</a></li>
+                    <li><a href="economie.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="trending-up" class="w-4 h-4 mr-2"></i>Économie</a></li>
+                    <li><a href="international.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="globe" class="w-4 h-4 mr-2"></i>International</a></li>
+                    <li><a href="sport.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="award" class="w-4 h-4 mr-2"></i>Sport</a></li>
+                    <li><a href="sante.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="heart" class="w-4 h-4 mr-2"></i>Santé</a></li>
+                    <li><a href="tech.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="cpu" class="w-4 h-4 mr-2"></i>Tech</a></li>
+                    <li><a href="societe.html"
+                            class="block px-4 py-2 text-sm font-semibold text-dark hover:bg-light-gray rounded flex items-center"><i
+                                data-feather="users" class="w-4 h-4 mr-2"></i>Société</a></li>
+                    <li><a href="culture.html"
+                            class="block px-4 py-2 text-sm font-semibold text-primary bg-light-gray rounded flex items-center"><i
+                                data-feather="music" class="w-4 h-4 mr-2"></i>Culture</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center space-x-3">
+                <i data-feather="music" class="w-8 h-8"></i>
+                <h1 class="text-4xl font-bold">Culture</h1>
+            </div>
+            <p class="mt-2 text-lg opacity-90">Musique, art, cinéma, littérature et patrimoine congolais</p>
+        </div>
+    </div>
+
+    <section class="container mx-auto py-12 px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+                <h2 class="text-2xl font-bold mb-6 border-b-2 border-purple-600 pb-2">Actualités Culturelles</h2>
+
+                <article class="mb-8 bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=450&fit=crop"
+                        alt="Musique" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-purple-600 text-sm font-semibold">Musique</span>
+                        <h3 class="text-2xl font-bold mt-2">Fally Ipupa annonce une tournée mondiale pour 2025</h3>
+                        <p class="text-gray-600 mt-3">L'icône de la rumba congolaise prépare une tournée exceptionnelle
+                            qui passera par 15 pays sur 3 continents pour promouvoir son nouvel album.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-sm text-gray-500">Il y a 2 heures</span>
+                            <a href="articles/culture-fally-ipupa-tournee.html"
+                                class="text-purple-600 font-semibold hover:underline">Lire plus →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="mb-8 bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=450&fit=crop"
+                        alt="Art" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-purple-600 text-sm font-semibold">Art Contemporain</span>
+                        <h3 class="text-2xl font-bold mt-2">Exposition des jeunes artistes congolais à l'Académie des
+                            Beaux-Arts</h3>
+                        <p class="text-gray-600 mt-3">Une trentaine d'artistes émergents exposent leurs œuvres à
+                            Kinshasa, mettant en lumière la créativité de la nouvelle génération.</p>
+                        <div class="flex justify-between items-center mt-4">
+                            <span class="text-sm text-gray-500">Il y a 5 heures</span>
+                            <a href="articles/culture-exposition-beaux-arts.html"
+                                class="text-purple-600 font-semibold hover:underline">Lire plus →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=640&h=360&fit=crop"
+                            alt="Cinéma" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <span class="text-purple-600 text-xs font-semibold">Cinéma</span>
+                            <h3 class="text-lg font-bold mt-2">Le film "Kinshasa Makambo" primé au festival de Cannes
+                            </h3>
+                            <p class="text-gray-600 mt-2 text-sm">Le documentaire congolais reçoit une mention spéciale
+                                du jury.</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <span class="text-xs text-gray-500">Hier</span>
+                                <a href="articles/culture-cinema-cannes.html"
+                                    class="text-purple-600 text-sm font-semibold hover:underline">Lire plus</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=640&h=360&fit=crop"
+                            alt="Littérature" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <span class="text-purple-600 text-xs font-semibold">Littérature</span>
+                            <h3 class="text-lg font-bold mt-2">Sortie du nouveau roman de Fiston Mwanza Mujila</h3>
+                            <p class="text-gray-600 mt-2 text-sm">L'écrivain congolais publie son troisième roman aux
+                                éditions Métailié.</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <span class="text-xs text-gray-500">Il y a 2 jours</span>
+                                <a href="articles/culture-litterature-mujila.html"
+                                    class="text-purple-600 text-sm font-semibold hover:underline">Lire plus</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=640&h=360&fit=crop"
+                            alt="Mode" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <span class="text-purple-600 text-xs font-semibold">Mode</span>
+                            <h3 class="text-lg font-bold mt-2">La Sape congolaise à l'honneur à Paris Fashion Week</h3>
+                            <p class="text-gray-600 mt-2 text-sm">Les sapeurs de Kinshasa défilent sur les podiums
+                                parisiens.</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <span class="text-xs text-gray-500">Il y a 3 jours</span>
+                                <a href="articles/culture-mode-sape.html"
+                                    class="text-purple-600 text-sm font-semibold hover:underline">Lire plus</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=640&h=360&fit=crop"
+                            alt="Patrimoine" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <span class="text-purple-600 text-xs font-semibold">Patrimoine</span>
+                            <h3 class="text-lg font-bold mt-2">Restauration du Palais de la Nation à Kinshasa</h3>
+                            <p class="text-gray-600 mt-2 text-sm">Les travaux de rénovation du monument historique ont
+                                débuté.</p>
+                            <div class="flex justify-between items-center mt-3">
+                                <span class="text-xs text-gray-500">Il y a 4 jours</span>
+                                <a href="articles/culture-patrimoine-palais.html"
+                                    class="text-purple-600 text-sm font-semibold hover:underline">Lire plus</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div>
+                <div class="bg-light-gray p-6 rounded-lg mb-6">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-feather="star" class="w-5 h-5 mr-2 text-purple-600"></i>
+                        À la Une
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="border-b pb-3">
+                            <a href="articles/culture-fally-ipupa-tournee.html" class="block">
+                                <h4 class="font-bold text-sm hover:text-purple-600">Fally Ipupa en tournée mondiale</h4>
+                                <span class="text-xs text-gray-500">Il y a 2 heures</span>
+                            </a>
+                        </div>
+                        <div class="border-b pb-3">
+                            <a href="articles/culture-exposition-beaux-arts.html" class="block">
+                                <h4 class="font-bold text-sm hover:text-purple-600">Exposition d'art contemporain</h4>
+                                <span class="text-xs text-gray-500">Il y a 5 heures</span>
+                            </a>
+                        </div>
+                        <div class="border-b pb-3">
+                            <a href="articles/culture-cinema-cannes.html" class="block">
+                                <h4 class="font-bold text-sm hover:text-purple-600">Film congolais primé à Cannes</h4>
+                                <span class="text-xs text-gray-500">Hier</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-600 to-pink-600 text-white p-6 rounded-lg mb-6">
+                    <h3 class="text-xl font-bold mb-4">Agenda Culturel</h3>
+                    <div class="space-y-3">
+                        <div class="border-b border-white/30 pb-2">
+                            <p class="font-semibold text-sm">Festival de Musique</p>
+                            <p class="text-xs opacity-90">15-17 Nov 2025 • Kinshasa</p>
+                        </div>
+                        <div class="border-b border-white/30 pb-2">
+                            <p class="font-semibold text-sm">Salon du Livre</p>
+                            <p class="text-xs opacity-90">20-25 Nov 2025 • Lubumbashi</p>
+                        </div>
+                        <div class="pb-2">
+                            <p class="font-semibold text-sm">Théâtre National</p>
+                            <p class="text-xs opacity-90">Tous les samedis • Kinshasa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-light-gray p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Liens Rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html"
+                                class="text-sm text-gray-700 hover:text-purple-600 flex items-center"><i
+                                    data-feather="home" class="w-4 h-4 mr-2"></i>Accueil</a></li>
+                        <li><a href="politique.html"
+                                class="text-sm text-gray-700 hover:text-purple-600 flex items-center"><i
+                                    data-feather="briefcase" class="w-4 h-4 mr-2"></i>Politique</a></li>
+                        <li><a href="economie.html"
+                                class="text-sm text-gray-700 hover:text-purple-600 flex items-center"><i
+                                    data-feather="trending-up" class="w-4 h-4 mr-2"></i>Économie</a></li>
+                        <li><a href="sport.html"
+                                class="text-sm text-gray-700 hover:text-purple-600 flex items-center"><i
+                                    data-feather="award" class="w-4 h-4 mr-2"></i>Sport</a></li>
+                        <li><a href="tech.html"
+                                class="text-sm text-gray-700 hover:text-purple-600 flex items-center"><i
+                                    data-feather="cpu" class="w-4 h-4 mr-2"></i>Tech</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white text-dark border-t border-gray-200">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center text-sm text-gray-600">
+                <p>&copy; 2024 Emergence Mag. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="components/navigation.js"></script>
+    <script>
+        feather.replace();
+        const dateElement = document.getElementById('current-date');
+        const currentDate = new Date().toLocaleDateString('fr-FR', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+        dateElement.textContent = currentDate.charAt(0).toUpperCase() + currentDate.slice(1);
+    </script>
+</body>
+
+</html>

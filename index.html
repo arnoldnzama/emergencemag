@@ -209,243 +209,346 @@
         </div>
     </div>
 
-    <!-- Main Carousel -->
-    <div id="main-carousel" class="relative h-96 md:h-[500px] w-full overflow-hidden">
-        <div class="carousel-slides flex h-full transition-transform duration-500">
-            <div class="carousel-slide min-w-full h-full relative">
-                <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=630&fit=crop"
-                    alt="Kinshasa" class="w-full h-full object-cover">
-                <div
-                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-3 md:p-8 text-white">
-                    <span class="bg-primary px-2 py-1 text-xs uppercase inline-block font-semibold">Politique</span>
-                    <h2 class="text-base md:text-4xl font-bold mt-1 md:mt-2 leading-tight">Réforme constitutionnelle:
-                        nouvelles propositions</h2>
-                    <p class="mt-1 md:mt-2 text-xs md:text-lg hidden md:block">Le gouvernement présente son projet de
-                        révision de la constitution.</p>
-                    <a href="articles/politique-reforme-constitutionnelle.html"
-                        class="inline-block mt-1 md:mt-4 text-xs md:text-base text-white hover:underline font-medium">Lire
-                        →</a>
-                </div>
+    <!-- Main Content Grid -->
+    <div class="container mx-auto px-4 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Main Article -->
+            <div class="lg:col-span-2">
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="img/art/cour_de compte.jpeg" alt="Cour des Comptes" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span
+                            class="bg-secondary text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-2">Économie</span>
+                        <h1 class="text-2xl md:text-3xl font-bold mb-3 leading-tight">Le Rapporteur Jacques Djoli
+                            réceptionne le rapport 2024 de la Cour des Comptes</h1>
+                        <p class="text-gray-600 mb-4 text-lg">Le rapport général sur l'exécution de la loi de finances
+                            2024 a été remis à l'Assemblée nationale, révélant des points cruciaux sur la gestion des
+                            finances publiques.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">1er novembre 2025 - 14:30</span>
+                            <a href="articles/economie-rapport-cour-comptes.html"
+                                class="text-primary font-semibold hover:underline">Lire l'article complet</a>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="carousel-slide min-w-full h-full relative">
-                <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=630&fit=crop"
-                    alt="Mines" class="w-full h-full object-cover">
-                <div
-                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-3 md:p-8 text-white">
-                    <span class="bg-primary px-2 py-1 text-xs uppercase inline-block font-semibold">Économie</span>
-                    <h2 class="text-base md:text-4xl font-bold mt-1 md:mt-2 leading-tight">Nouveau contrat minier dans
-                        le Katanga</h2>
-                    <p class="mt-1 md:mt-2 text-xs md:text-lg hidden md:block">Le gouvernement et les entreprises
-                        minières trouvent un accord.</p>
-                    <a href="articles/economie-production-cobalt.html"
-                        class="inline-block mt-1 md:mt-4 text-xs md:text-base text-white hover:underline font-medium">Lire
-                        →</a>
-                </div>
-            </div>
-            <div class="carousel-slide min-w-full h-full relative">
-                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200&h=630&fit=crop"
-                    alt="Sport" class="w-full h-full object-cover">
-                <div
-                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/70 to-transparent p-3 md:p-8 text-white">
-                    <span class="bg-primary px-2 py-1 text-xs uppercase inline-block font-semibold">Sport</span>
-                    <h2 class="text-base md:text-4xl font-bold mt-1 md:mt-2 leading-tight">Les Léopards battent le
-                        Sénégal</h2>
-                    <p class="mt-1 md:mt-2 text-xs md:text-lg hidden md:block">Victoire 2-1 pour la RDC en match de
-                        préparation pour la CAN.</p>
-                    <a href="articles/sport-leopards-can-2025.html"
-                        class="inline-block mt-1 md:mt-4 text-xs md:text-base text-white hover:underline font-medium">Lire
-                        →</a>
-                </div>
+
+            <!-- Secondary Articles -->
+            <div class="lg:col-span-2 space-y-4">
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="flex">
+                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=640&h=360&fit=crop"
+                            alt="Politique" class="w-32 h-24 object-cover flex-shrink-0">
+                        <div class="p-4 flex-1">
+                            <span
+                                class="bg-primary text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-1">Politique</span>
+                            <h3 class="font-bold text-sm mb-1">Réforme constitutionnelle: nouvelles propositions</h3>
+                            <p class="text-xs text-gray-600 mb-2">Le gouvernement présente son projet de révision.</p>
+                            <span class="text-xs text-gray-500">Il y a 2 heures</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="flex">
+                        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=640&h=360&fit=crop"
+                            alt="Sport" class="w-32 h-24 object-cover flex-shrink-0">
+                        <div class="p-4 flex-1">
+                            <span
+                                class="bg-green-600 text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-1">Sport</span>
+                            <h3 class="font-bold text-sm mb-1">Les Léopards battent le Sénégal 2-1</h3>
+                            <p class="text-xs text-gray-600 mb-2">Victoire en match de préparation pour la CAN.</p>
+                            <span class="text-xs text-gray-500">Il y a 4 heures</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="flex">
+                        <img src="img/art/fally.jpg" alt="Culture" class="w-32 h-24 object-cover flex-shrink-0">
+                        <div class="p-4 flex-1">
+                            <span
+                                class="bg-purple-600 text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-1">Culture</span>
+                            <h3 class="font-bold text-sm mb-1">Fally Ipupa annonce une tournée mondiale</h3>
+                            <p class="text-xs text-gray-600 mb-2">L'artiste présentera son nouvel album dans 12 pays.
+                            </p>
+                            <span class="text-xs text-gray-500">Il y a 6 heures</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="flex">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=640&h=360&fit=crop"
+                            alt="Mines" class="w-32 h-24 object-cover flex-shrink-0">
+                        <div class="p-4 flex-1">
+                            <span
+                                class="bg-orange-600 text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-1">Mines</span>
+                            <h3 class="font-bold text-sm mb-1">Nouveau contrat minier dans le Katanga</h3>
+                            <p class="text-xs text-gray-600 mb-2">Accord entre le gouvernement et les entreprises.</p>
+                            <span class="text-xs text-gray-500">Il y a 8 heures</span>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
-        <button
-            class="carousel-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70">
-            <i data-feather="chevron-left"></i>
-        </button>
-        <button
-            class="carousel-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70">
-            <i data-feather="chevron-right"></i>
-        </button>
     </div>
 
-    <!-- Latest News Section -->
-    <section class="container mx-auto py-12 px-4">
-        <h2 class="text-3xl font-bold mb-8 border-b-2 border-primary pb-2 inline-block">Dernières Nouvelles</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <img src="img/art/cour_de compte.jpeg" alt="Cour des Comptes" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="text-secondary text-sm font-semibold">Économie</span>
-                    <h3 class="text-xl font-bold mt-2">Le Rapporteur Jacques Djoli réceptionne le rapport 2024 de la
-                        Cour des Comptes</h3>
-                    <p class="text-gray-600 mt-2">Le rapport général sur l'exécution de la loi de finances 2024 a été
-                        remis à l'Assemblée nationale.</p>
-                    <div class="flex justify-between items-center mt-4">
-                        <span class="text-sm text-gray-500">1er novembre 2025</span>
-                        <a href="articles/economie-rapport-cour-comptes.html"
-                            class="text-primary font-semibold hover:underline">Lire plus</a>
+    <!-- News Grid Section -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Left Column - Latest News -->
+            <div class="lg:col-span-2">
+                <h2 class="text-xl font-bold mb-4 border-b border-gray-300 pb-2">Dernières actualités</h2>
+                <div class="space-y-4">
+                    <article class="border-b border-gray-200 pb-4">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=640&h=360&fit=crop"
+                                alt="Société" class="w-24 h-16 object-cover rounded flex-shrink-0">
+                            <div class="flex-1">
+                                <span
+                                    class="bg-blue-600 text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-1">Société</span>
+                                <h3 class="font-bold text-sm mb-1 hover:text-primary cursor-pointer">Nouveau programme
+                                    d'alphabétisation dans les zones rurales</h3>
+                                <p class="text-xs text-gray-600 mb-1">Le gouvernement lance une initiative pour réduire
+                                    l'analphabétisme de 30% d'ici 2025.</p>
+                                <span class="text-xs text-gray-500">Hier - 16:45</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="border-b border-gray-200 pb-4">
+                        <div class="flex gap-4">
+                            <img src="img/art/jad20240529-ass-rdc-gouvernement.avif" alt="Gouvernement"
+                                class="w-24 h-16 object-cover rounded flex-shrink-0">
+                            <div class="flex-1">
+                                <span
+                                    class="bg-red-600 text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-1">Politique</span>
+                                <h3 class="font-bold text-sm mb-1 hover:text-primary cursor-pointer">Remaniement
+                                    ministériel: les nouveaux défis</h3>
+                                <p class="text-xs text-gray-600 mb-1">Analyse des principaux défis économiques et
+                                    sociaux du nouveau gouvernement.</p>
+                                <span class="text-xs text-gray-500">Il y a 1 jour - 12:30</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="border-b border-gray-200 pb-4">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=630&fit=crop"
+                                alt="Kinshasa" class="w-24 h-16 object-cover rounded flex-shrink-0">
+                            <div class="flex-1">
+                                <span
+                                    class="bg-green-600 text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-1">Environnement</span>
+                                <h3 class="font-bold text-sm mb-1 hover:text-primary cursor-pointer">Lutte contre la
+                                    déforestation: nouvelles mesures</h3>
+                                <p class="text-xs text-gray-600 mb-1">Renforcement des contrôles dans les zones
+                                    protégées du pays.</p>
+                                <span class="text-xs text-gray-500">Il y a 1 jour - 09:15</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="border-b border-gray-200 pb-4">
+                        <div class="flex gap-4">
+                            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=640&h=360&fit=crop"
+                                alt="Sport" class="w-24 h-16 object-cover rounded flex-shrink-0">
+                            <div class="flex-1">
+                                <span
+                                    class="bg-orange-600 text-white px-2 py-1 text-xs uppercase inline-block font-semibold mb-1">International</span>
+                                <h3 class="font-bold text-sm mb-1 hover:text-primary cursor-pointer">Relations
+                                    RDC-Angola: nouveaux accords signés</h3>
+                                <p class="text-xs text-gray-600 mb-1">Coopération renforcée dans les domaines de
+                                    l'énergie et des transports.</p>
+                                <span class="text-xs text-gray-500">Il y a 2 jours - 14:20</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Right Column - Sidebar -->
+            <div class="lg:col-span-1">
+                <!-- Most Read -->
+                <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                    <h3 class="font-bold text-lg mb-4 border-b border-gray-300 pb-2">Les plus lus</h3>
+                    <div class="space-y-3">
+                        <article class="flex items-start gap-3">
+                            <span
+                                class="bg-primary text-white text-xs font-bold px-2 py-1 rounded flex-shrink-0">1</span>
+                            <div>
+                                <h4 class="font-semibold text-sm hover:text-primary cursor-pointer">Rapport de la Cour
+                                    des Comptes 2024</h4>
+                                <span class="text-xs text-gray-500">1,245 lectures</span>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-3">
+                            <span
+                                class="bg-gray-400 text-white text-xs font-bold px-2 py-1 rounded flex-shrink-0">2</span>
+                            <div>
+                                <h4 class="font-semibold text-sm hover:text-primary cursor-pointer">Tournée mondiale de
+                                    Fally Ipupa</h4>
+                                <span class="text-xs text-gray-500">987 lectures</span>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-3">
+                            <span
+                                class="bg-gray-400 text-white text-xs font-bold px-2 py-1 rounded flex-shrink-0">3</span>
+                            <div>
+                                <h4 class="font-semibold text-sm hover:text-primary cursor-pointer">Victoire des
+                                    Léopards contre le Sénégal</h4>
+                                <span class="text-xs text-gray-500">756 lectures</span>
+                            </div>
+                        </article>
                     </div>
                 </div>
-            </article>
-            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=640&h=360&fit=crop"
-                    alt="Politique" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="text-secondary text-sm font-semibold">Politique</span>
-                    <h3 class="text-xl font-bold mt-2">Réunion cruciale entre l'opposition et la majorité présidentielle
-                    </h3>
-                    <p class="text-gray-600 mt-2">Les leaders politiques se rencontrent pour discuter des réformes
-                        électorales.</p>
-                    <div class="flex justify-between items-center mt-4">
-                        <span class="text-sm text-gray-500">Il y a 2 heures</span>
-                        <a href="articles/politique-reforme-constitutionnelle.html"
-                            class="text-primary font-semibold hover:underline">Lire plus</a>
-                    </div>
-                </div>
-            </article>
-            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=640&h=360&fit=crop"
-                    alt="Société" class="w-full h-48 object-cover">
-                <div class="p-6">
-                    <span class="text-secondary text-sm font-semibold">Société</span>
-                    <h3 class="text-xl font-bold mt-2">Nouveau programme d'alphabétisation dans les zones rurales</h3>
-                    <p class="text-gray-600 mt-2">Le gouvernement lance une initiative pour réduire l'analphabétisme de
-                        30% d'ici 2025.</p>
-                    <div class="flex justify-between items-center mt-4">
-                        <span class="text-sm text-gray-500">Hier</span>
-                        <a href="articles/societe-alphabetisation.html"
-                            class="text-primary font-semibold hover:underline">Lire plus</a>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <div class="text-center mt-8">
-            <a href="#"
-                class="inline-block bg-primary text-white px-6 py-3 rounded hover:bg-blue-800 transition-colors">Voir
-                plus d'articles</a>
+
+
+            </div>
         </div>
     </section>
 
-    <!-- RDC Today Section -->
-    <section class="bg-gray-100 py-12">
+    <!-- Categories Section -->
+    <section class="bg-gray-50 py-8">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8 border-b-2 border-primary pb-2 inline-block">RDC Aujourd'hui</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                    <img src="img/art/jad20240529-ass-rdc-gouvernement.avif"
-                        alt="Gouvernement RDC" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <span class="text-secondary text-sm font-semibold">Analyse</span>
-                        <h3 class="text-2xl font-bold mt-2">Les défis du nouveau gouvernement face aux attentes de la
-                            population</h3>
-                        <p class="text-gray-600 mt-2">Notre analyse des principaux défis économiques et sociaux auxquels
-                            fait face l'équipe gouvernementale récemment nommée.</p>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-sm text-gray-500">Aujourd'hui</span>
-                            <a href="articles/politique-remaniement-ministeriel.html"
-                                class="text-primary font-semibold hover:underline">Lire l'analyse</a>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Politique -->
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="font-bold text-lg mb-3 text-primary border-b border-gray-200 pb-2">Politique</h3>
+                    <div class="space-y-3">
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Réforme
+                                constitutionnelle en cours</h4>
+                            <span class="text-xs text-gray-500">Il y a 2h</span>
+                        </article>
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Élections locales
+                                reportées</h4>
+                            <span class="text-xs text-gray-500">Il y a 5h</span>
+                        </article>
                     </div>
+                    <a href="politique.html"
+                        class="text-primary text-sm font-semibold hover:underline mt-3 inline-block">Voir plus →</a>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-                        <a href="articles/economie-croissance-economique.html" class="block">
-                            <span class="text-secondary text-xs font-semibold">Économie</span>
-                            <h4 class="font-bold mt-1">Croissance économique à 6.2% pour le premier trimestre</h4>
-                            <p class="text-sm text-gray-600 mt-1">Les secteurs minier et agricole en tête de la
-                                croissance.</p>
-                            <span class="text-xs text-gray-500 block mt-2">Il y a 3 heures</span>
-                        </a>
-                    </article>
-                    <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-                        <a href="articles/sante-centre-mbuji-mayi.html" class="block">
-                            <span class="text-secondary text-xs font-semibold">Santé</span>
-                            <h4 class="font-bold mt-1">Nouveau centre de traitement du paludisme inauguré à Mbuji-Mayi
-                            </h4>
-                            <p class="text-sm text-gray-600 mt-1">Capacité d'accueil de 200 patients par jour.</p>
-                            <span class="text-xs text-gray-500 block mt-2">Hier</span>
-                        </a>
-                    </article>
-                    <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-                        <a href="politique.html" class="block">
-                            <span class="text-secondary text-xs font-semibold">Environnement</span>
-                            <h4 class="font-bold mt-1">Lutte contre la déforestation: nouvelles mesures annoncées</h4>
-                            <p class="text-sm text-gray-600 mt-1">Renforcement des contrôles dans les zones protégées.
-                            </p>
-                            <span class="text-xs text-gray-500 block mt-2">Il y a 1 jour</span>
-                        </a>
-                    </article>
-                    <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-                        <a href="articles/international-rdc-angola.html" class="block">
-                            <span class="text-secondary text-xs font-semibold">International</span>
-                            <h4 class="font-bold mt-1">La RDC renforce ses relations diplomatiques avec l'Angola</h4>
-                            <p class="text-sm text-gray-600 mt-1">Accords signés dans les domaines de l'énergie et des
-                                transports.</p>
-                            <span class="text-xs text-gray-500 block mt-2">Il y a 2 jours</span>
-                        </a>
-                    </article>
+
+                <!-- Économie -->
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="font-bold text-lg mb-3 text-secondary border-b border-gray-200 pb-2">Économie</h3>
+                    <div class="space-y-3">
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Croissance à 6.2%
+                                au T1</h4>
+                            <span class="text-xs text-gray-500">Il y a 3h</span>
+                        </article>
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Nouveau contrat
+                                minier</h4>
+                            <span class="text-xs text-gray-500">Il y a 8h</span>
+                        </article>
+                    </div>
+                    <a href="economie.html"
+                        class="text-primary text-sm font-semibold hover:underline mt-3 inline-block">Voir plus →</a>
+                </div>
+
+                <!-- Sport -->
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="font-bold text-lg mb-3 text-green-600 border-b border-gray-200 pb-2">Sport</h3>
+                    <div class="space-y-3">
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Léopards battent le
+                                Sénégal</h4>
+                            <span class="text-xs text-gray-500">Il y a 4h</span>
+                        </article>
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">TP Mazembe en
+                                finale</h4>
+                            <span class="text-xs text-gray-500">Hier</span>
+                        </article>
+                    </div>
+                    <a href="sport.html"
+                        class="text-primary text-sm font-semibold hover:underline mt-3 inline-block">Voir plus →</a>
+                </div>
+
+                <!-- Culture -->
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <h3 class="font-bold text-lg mb-3 text-purple-600 border-b border-gray-200 pb-2">Culture</h3>
+                    <div class="space-y-3">
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Tournée de Fally
+                                Ipupa</h4>
+                            <span class="text-xs text-gray-500">Il y a 6h</span>
+                        </article>
+                        <article>
+                            <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Festival Luba au
+                                Kasaï</h4>
+                            <span class="text-xs text-gray-500">Il y a 2 jours</span>
+                        </article>
+                    </div>
+                    <a href="culture.html"
+                        class="text-primary text-sm font-semibold hover:underline mt-3 inline-block">Voir plus →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Culture & Society Section -->
-    <section class="container mx-auto py-12 px-4">
-        <h2 class="text-3xl font-bold mb-8 border-b-2 border-primary pb-2 inline-block">Culture & Société</h2>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- Bottom News Section -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- International -->
             <div>
-                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow mb-6">
-                    <img src="img/art/fally.jpg"
-                        alt="Culture" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <span class="text-secondary text-sm font-semibold">Culture</span>
-                        <h3 class="text-2xl font-bold mt-2">Fally Ipupa annonce une nouvelle tournée mondiale</h3>
-                        <p class="text-gray-600 mt-2">L'artiste congolais présentera son nouvel album dans 12 pays à
-                            travers le monde.</p>
-                        <div class="flex justify-between items-center mt-4">
-                            <span class="text-sm text-gray-500">Aujourd'hui</span>
-                            <a href="culture.html" class="text-primary font-semibold hover:underline">Lire plus</a>
-                        </div>
-                    </div>
-                </article>
+                <h3 class="font-bold text-lg mb-4 border-b border-gray-300 pb-2 text-orange-600">International</h3>
+                <div class="space-y-4">
+                    <article class="border-b border-gray-100 pb-3">
+                        <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Relations RDC-Angola
+                            renforcées</h4>
+                        <p class="text-xs text-gray-600 mb-1">Nouveaux accords dans l'énergie et les transports.</p>
+                        <span class="text-xs text-gray-500">Il y a 2 jours</span>
+                    </article>
+                    <article class="border-b border-gray-100 pb-3">
+                        <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Sommet de l'Union
+                            Africaine</h4>
+                        <p class="text-xs text-gray-600 mb-1">La RDC présente ses priorités continentales.</p>
+                        <span class="text-xs text-gray-500">Il y a 3 jours</span>
+                    </article>
+                </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=640&h=360&fit=crop"
-                        alt="Cuisine" class="w-full h-32 object-cover rounded-t-lg">
-                    <div class="p-2">
-                        <span class="text-secondary text-xs font-semibold">Cuisine</span>
-                        <h4 class="font-bold mt-1 text-sm">Les secrets du moambe, plat national de la RDC</h4>
-                        <span class="text-xs text-gray-500 block mt-2">Il y a 2 jours</span>
-                    </div>
-                </article>
-                <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=640&h=360&fit=crop"
-                        alt="Art" class="w-full h-32 object-cover rounded-t-lg">
-                    <div class="p-2">
-                        <span class="text-secondary text-xs font-semibold">Art</span>
-                        <h4 class="font-bold mt-1 text-sm">Exposition des jeunes artistes congolais à Kinshasa</h4>
-                        <span class="text-xs text-gray-500 block mt-2">Il y a 3 jours</span>
-                    </div>
-                </article>
-                <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=640&h=360&fit=crop"
-                        alt="Mode" class="w-full h-32 object-cover rounded-t-lg">
-                    <div class="p-2">
-                        <span class="text-secondary text-xs font-semibold">Mode</span>
-                        <h4 class="font-bold mt-1 text-sm">La mode congolaise s'expose à Paris Fashion Week</h4>
-                        <span class="text-xs text-gray-500 block mt-2">Il y a 4 jours</span>
-                    </div>
-                </article>
-                <article class="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=640&h=360&fit=crop"
-                        alt="Tradition" class="w-full h-32 object-cover rounded-t-lg">
-                    <div class="p-2">
-                        <span class="text-secondary text-xs font-semibold">Tradition</span>
-                        <h4 class="font-bold mt-1 text-sm">Célébration du festival Luba dans le Kasaï</h4>
-                        <span class="text-xs text-gray-500 block mt-2">Il y a 5 jours</span>
-                    </div>
-                </article>
+
+            <!-- Santé -->
+            <div>
+                <h3 class="font-bold text-lg mb-4 border-b border-gray-300 pb-2 text-red-600">Santé</h3>
+                <div class="space-y-4">
+                    <article class="border-b border-gray-100 pb-3">
+                        <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Centre anti-paludisme à
+                            Mbuji-Mayi</h4>
+                        <p class="text-xs text-gray-600 mb-1">Capacité de 200 patients par jour inaugurée.</p>
+                        <span class="text-xs text-gray-500">Hier</span>
+                    </article>
+                    <article class="border-b border-gray-100 pb-3">
+                        <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Campagne de vaccination
+                        </h4>
+                        <p class="text-xs text-gray-600 mb-1">Lutte contre la rougeole dans 5 provinces.</p>
+                        <span class="text-xs text-gray-500">Il y a 2 jours</span>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Tech -->
+            <div>
+                <h3 class="font-bold text-lg mb-4 border-b border-gray-300 pb-2 text-blue-600">Tech</h3>
+                <div class="space-y-4">
+                    <article class="border-b border-gray-100 pb-3">
+                        <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">5G déployée à Kinshasa
+                        </h4>
+                        <p class="text-xs text-gray-600 mb-1">Première phase du réseau haute vitesse lancée.</p>
+                        <span class="text-xs text-gray-500">Il y a 1 jour</span>
+                    </article>
+                    <article class="border-b border-gray-100 pb-3">
+                        <h4 class="font-semibold text-sm hover:text-primary cursor-pointer mb-1">Startup fintech en
+                            croissance</h4>
+                        <p class="text-xs text-gray-600 mb-1">Financement de 2M$ pour l'expansion régionale.</p>
+                        <span class="text-xs text-gray-500">Il y a 3 jours</span>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
@@ -522,7 +625,7 @@
     <footer class="bg-white text-dark">
         <!-- Main Footer Content -->
         <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- About Section -->
                 <div>
                     <div class="flex items-center mb-4">
@@ -548,42 +651,7 @@
                     </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-bold mb-4 border-b border-gray-300 pb-2">Navigation</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="index.html"
-                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
-                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
-                                Accueil
-                            </a></li>
-                        <li><a href="politique.html"
-                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
-                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
-                                Politique
-                            </a></li>
-                        <li><a href="economie.html"
-                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
-                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
-                                Économie
-                            </a></li>
-                        <li><a href="sport.html"
-                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
-                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
-                                Sport
-                            </a></li>
-                        <li><a href="culture.html"
-                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
-                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
-                                Culture
-                            </a></li>
-                        <li><a href="videos.html"
-                                class="text-gray-600 hover:text-primary transition-colors flex items-center">
-                                <i data-feather="chevron-right" class="w-3 h-3 mr-1"></i>
-                                Vidéos
-                            </a></li>
-                    </ul>
-                </div>
+
 
                 <!-- Services -->
                 <div>
